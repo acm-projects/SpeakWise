@@ -81,13 +81,9 @@ General Use
 
 ## Developers!! 
 Sai Peram ⚡️ 
-
 Soujanya Prakash Kamalapur 🦋
-
 Swayam Arora 🌟   
-
 Charitha Sarraju 🪐
-
 Ifrah Zainab 🌞
 
 Kanchan Javalkar - *Project Manager*  

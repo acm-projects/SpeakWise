@@ -29,13 +29,11 @@
 |Week| Deliverables/Tasks |
 |--|--|
 | 1 | Meet team, assign frontend/backend, setup development environment, explore app idea, decide on app design |
-| 2 | Finalize vision for the app, learn basics of Flutter/Dart, *Front end:* plan pages and create wireframes & code initial screens, *Back end:* learn and set up Google Firebase, decide on approach to generating interview questions |
-| 3 & 4 | *Front end:* finalize UI design, code initial pages, research how to display transcribed text in flutter, *Back end:* set up firebase to store user info, set up user authentication, research and implement speech-to-text API |
-| 4 |*Front end:* 50% of app screens, *Back-end:* work on implementing video recording, uploading, and start integrating with front end|
-| 5 | *Front end:* complete 75% of screens, *Back end:* work on implementing voice notes and continue to integrate with frontend as needed | 
-| 6 & 7 | *Front end:* 100% of app screens, enhancing features/animations, *Back end:* combine audio/video clips into one movie, ability for user/group to choose movie release time |
-| 8 & 9 | Stretch goals, presentation slides + script|
-| 10 | Practice presentation, final touches|
+| 2 | Finalize vision for the app, learn basics of Flutter/Dart, *Front end:* plan pages and create wireframes & code initial screens, *Back end:* learn and set up Google Firebase, decide/research approach for generating interview questions |
+| 3 & 4 | *Front end:* finalize UI design, code initial pages, research how to display transcribed text in flutter, *Back end:* finish user authentication, research/implement speech-to-text API |
+| 5 & 6 | Integrate frontend/backend, *Front end:* 75% of pages, display text from speech, *Back-end:* implement generating interview questions feature, begin response analysis features|
+| 7 & 8 | Integrate frontend/backend *Front end:* finish all pages, *Back end:* finish response analysis features | 
+| 9 & 10 | *Front end:* finish frontend/backend integration, prepare slides and presentation, get app presentation ready |
 | 11 | Presentation Night ‼️‼️|
 
 ## Tech Stack 

@@ -80,11 +80,11 @@ General Use
 | git pull origin "branch" | Pull updates from a specific branch |
 
 ## Developers!! 
-- Sai Peram 
-- Soujanya Prakash Kamalapur 
-- Swayam Arora    
-- Charitha Sarraju 
-- Ifrah Zainab 
+- Sai Peram ⚡️
+- Soujanya Prakash Kamalapur 🌸
+- Swayam Arora 🌟
+- Charitha Sarraju 🪐
+- Ifrah Zainab 🌞
 
 Kanchan Javalkar - *Project Manager*  
 Erik Rodriguez - *Industry Mentor*

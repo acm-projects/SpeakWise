@@ -81,7 +81,7 @@ General Use
 
 ## Developers!! 
 Sai Peram ⚡️
-- Soujanya Prakash Kamalapur 🌸
+Soujanya Prakash Kamalapur 🌸
 - Swayam Arora 🌟
 - Charitha Sarraju 🪐
 - Ifrah Zainab 🌞

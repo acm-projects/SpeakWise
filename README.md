@@ -36,7 +36,7 @@
 | 6 & 7 | *Front end:* 100% of app screens, enhancing features/animations, *Back end:* combine audio/video clips into one movie, ability for user/group to choose movie release time |
 | 8 & 9 | Stretch goals, presentation slides + script|
 | 10 | Practice presentation, final touches|
-| 11 | Presentation Night!!|
+| 11 | Presentation Night ‼️‼️|
 
 ## Tech Stack 
 Wireframing: [Figma](https://www.figma.com/)  

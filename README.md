@@ -82,10 +82,8 @@ General Use
 ## Developers!! 
 Sai Peram ϟ                                                                                   
 Soujanya Prakash Kamalapur ✿                                                                         
-Swayam Arora ☆  
-
-Charitha Sarraju ☾   
-
+Swayam Arora ☆                                                                                 
+Charitha Sarraju ☾                                                                             
 Ifrah Zainab ☼
 
 Kanchan Javalkar - *Project Manager*  

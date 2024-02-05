@@ -29,7 +29,7 @@
 |Week| Deliverables/Tasks |
 |--|--|
 | 1 | Meet team, assign frontend/backend, setup development environment, explore app idea, decide on app design |
-| 2 | Finalize vision for the app, learn basics of Flutter/Dart | *Front end:* plan pages and create wireframes & code initial screens, *Back end:* learn dart, learn and set up Google Firebase, decide on approach to generating interview questions  |
+| 2 | Finalize vision for the app, learn basics of Flutter/Dart, *Front end:* plan pages and create wireframes & code initial screens, *Back end:* learn dart, learn and set up Google Firebase, decide on approach to generating interview questions |
 | 3 & 4 | *Front end:* plan pages and create wireframes & code initial screens, *Back end:* set up database for storage and setup user authentication
 | 4 |*Front end:* 50% of app screens, *Back-end:* work on implementing video recording, uploading, and start integrating with front end|
 | 5 | *Front end:* complete 75% of screens, *Back end:* work on implementing voice notes and continue to integrate with frontend as needed | 

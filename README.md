@@ -1,8 +1,7 @@
 # SpeakWise
 
 
-
-<p align="center"> <img src="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA/giphy.gif"/> </p>
+<p align="center"> <img src="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA"/> </p>
 
 
 

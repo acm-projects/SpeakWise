@@ -1,8 +1,7 @@
 # SpeakWise
 
 
-![giphy](https://github.com/acm-projects/SpeakWise/assets/112922432/463d7323-d94d-4dad-ad6b-39a99ba1cde9)
-
+<h1 align="center"> ![giphy](https://github.com/acm-projects/SpeakWise/assets/112922432/463d7323-d94d-4dad-ad6b-39a99ba1cde9) </h1>
 
 
 <h1 align="center"> SpeakWise </h1>

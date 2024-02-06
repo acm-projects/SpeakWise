@@ -10,7 +10,8 @@
 ## MVP 
 - User Account
 - Record speech
-- Analyze speech based on tone/pace
+- Analyze tone using sentiment analysis
+- Analyze pace using WPM algorithm
 - Count filler words
 - AI generated interview questions based on job description
 

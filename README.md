@@ -1,7 +1,7 @@
 # SpeakWise
 
 
-![alt text]([http://url/to/img.png](https://i.pinimg.com/originals/6d/28/56/6d2856ec5349d41c9cfcab1ae7d01295.jpg))
+![](name-of-giphy.gif)
 
 
 

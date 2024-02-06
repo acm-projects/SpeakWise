@@ -2,6 +2,9 @@
 
 <p align="center"> <img src="https://giphy.com/embed/l1L0hIFMD1bv5YlAA" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA">via GIPHY</a></p>
 
+<iframe src="https://giphy.com/embed/l1L0hIFMD1bv5YlAA" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA">via GIPHY</a></p>
+
+
 <h1 align="center"> SpeakWise </h1>
 
 <div align="center"> Have you ever struggled with public speaking or been nervous about acing that upcoming interview? SpeakWise is your ultimate companion for mastering the art of speech and interview preparation! Record your speech effortlessly within the app and watch as SpeakWise analyzes your tone, pace, and counts your filler words. Additionally, experience mock interviews catered to your job description with personalized interview questions and response analysis. Join SpeakWise – where your speaking troubles end and communication begins! </div>

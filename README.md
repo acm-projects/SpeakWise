@@ -1,6 +1,8 @@
 # SpeakWise
 
-<iframe src="https://giphy.com/embed/l1L0hIFMD1bv5YlAA" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <p><a href="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA">via GIPHY</a></p>
+<p align="center"> <img src="https://media.giphy.com/media/WOIGpnJ3ye445BUQl4/giphy.gif" /> </p>
+
+<p align="center"> <img src="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA/giphy.gif"/> </p>
 
 
 

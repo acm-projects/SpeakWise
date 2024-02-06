@@ -9,31 +9,28 @@
 
 ## MVP 
 - User Account
-- Record and transcribe speech
-- Algorithm that reads job description and creates mock interview questions
-    - Either using AI (GPT-3), or a rule-based approach
-- Analyze content of question responses
-- Analyze pacing and tone
+- Record speech
+- Analyze speech based on tone/pace
 - Count filler words
+- AI generated interview questions based on job description
 
 ## Stretch Goals 
+- Daily challenges to reinforce speaking skills
+- Social Aspect (sharing stats such as number of filler words)
 - Analyze additional aspects of speech or interview responses (clarity, emotion, etc.)
 - Display statistics related to speech improvement (how the amount of filler words changes, etc.)
 - Give tips on how to improve speech based on analysis 
-- Resume Parsing
-
-
 
 
 ## Milestones 
 |Week| Deliverables/Tasks |
 |--|--|
-| 1 | Meet team, assign frontend/backend, setup development environment, explore app idea, decide on app design |
-| 2 | Finalize vision for the app, learn basics of Flutter/Dart, *Front end:* plan pages and create wireframes & code initial screens, *Back end:* learn and set up Google Firebase, decide/research approach for generating interview questions |
-| 3 & 4 | *Front end:* finalize UI design, code initial pages, research how to display transcribed text in flutter, *Back end:* finish user authentication, research/implement speech-to-text API |
-| 5 & 6 | Integrate frontend/backend, *Front end:* 75% of pages, display text from speech, *Back-end:* implement generating interview questions feature, begin response analysis features|
-| 7 & 8 | Integrate frontend/backend *Front end:* finish all pages, *Back end:* finish response analysis features | 
-| 9 & 10 | *Front end:* finish frontend/backend integration, prepare slides and presentation, get app presentation ready |
+| 1 | Meet team, assign frontend/backend, setup development environment, decide on app design |
+| 2 | Finalize vision for the app, learn basics of Flutter/Dart, *Front end:* plan pages and create wireframes & code initial screens, *Back end:* Set up Google Firebase, begin coding user auth |
+| 3 & 4 | *Front end:* code pages, *Back end:* finish user authentication, implement speech-to-text API, begin sentiment analysis feature |
+| 5 & 6 | *Front end:* 75% of pages, *Back-end:* finish sentiment analysis, create algorithm to find WPM, feature to count filler words|
+| 7 & 8 | *Front end:* finish all pages, *Back end:* finish WPM algorithm and counting filler words feature, work on AI generated Interview questions| 
+| 9 & 10 | Finish integrating all features, prepare slides and presentation, get app presentation ready |
 | 11 | Presentation Night ‼️‼️|
 
 ## Tech Stack 

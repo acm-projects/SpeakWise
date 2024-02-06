@@ -1,7 +1,7 @@
 # SpeakWise
 
 
-<p align="center"> <img src="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Frory-gilmore-outfits--708894797612540844%2F&psig=AOvVaw2hk7ybu05gBFSCoSd2zwao&ust=1707347429944000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKCPtfrql4QDFQAAAAAdAAAAABAE"/> </p>
+![alt text]([http://url/to/img.png](https://i.pinimg.com/originals/6d/28/56/6d2856ec5349d41c9cfcab1ae7d01295.jpg))
 
 
 

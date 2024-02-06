@@ -1,6 +1,6 @@
 # SpeakWise
 
-<p align="center"> <img src="https://media.giphy.com/media/WOIGpnJ3ye445BUQl4/giphy.gif" /> </p>
+
 
 <p align="center"> <img src="https://giphy.com/gifs/gilmoregirls-netflix-gilmore-girls-l1L0hIFMD1bv5YlAA/giphy.gif"/> </p>
 

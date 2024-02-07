@@ -1,5 +1,3 @@
-# SpeakWise
-
 
 
 <p align="center">

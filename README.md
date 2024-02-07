@@ -66,7 +66,8 @@ API's:
 
 
 Other Resources:                                                                                                                             
-figma: [Figma link](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849)                                      
+figma: [Figma link](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849) 
+
 [How to be Successful in Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit)
 
 ## GitHub Cheat Sheet ⚡️

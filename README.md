@@ -9,7 +9,7 @@
 <div align="center"> Have you ever struggled with public speaking or been nervous about acing that upcoming interview? SpeakWise is your ultimate companion for mastering the art of speech and interview preparation! Record your speech effortlessly within the app and watch as SpeakWise analyzes your tone, pace, and counts your filler words. Additionally, experience mock interviews catered to your job description with personalized interview questions and response analysis. Join SpeakWise – where your speaking troubles end and communication begins! </div>
 
 
-## MVP 
+## MVP 🌟
 - User Account
 - Record speech
 - Analyze tone using sentiment analysis
@@ -17,7 +17,7 @@
 - Count filler words
 - AI generated interview questions based on job description
 
-## Stretch Goals 
+## Stretch Goals 🌟
 - Daily challenges to reinforce speaking skills
 - Social Aspect (sharing stats such as number of filler words)
 - Analyze additional aspects of speech or interview responses (clarity, emotion, etc.)
@@ -25,7 +25,7 @@
 - Give tips on how to improve speech based on analysis 
 
 
-## Milestones 
+## Milestones 🌟
 |Week| Deliverables/Tasks |
 |--|--|
 | 1 | Meet team, assign frontend/backend, setup development environment, decide on app design |
@@ -36,12 +36,12 @@
 | 9 & 10 | Finish integrating all features, prepare slides and presentation, get app presentation ready |
 | 11 | Presentation Night ‼️‼️|
 
-## Tech Stack 
+## Tech Stack 🌟
 Wireframing: [Figma](https://www.figma.com/)  
 Front-end: [Flutter](https://docs.flutter.dev/get-started/install)   
 Back-end: Dart & [Firebase](https://firebase.google.com/)   
  
-## Helpful Resources/Tutorials 
+## Helpful Resources/Tutorials 🌟
 Installation & Set Up:  
 [Flutter Installation for Mac OS](https://www.youtube.com/watch?v=fzAg7lOWqVE)  
 [Flutter Installation for Windows](https://www.youtube.com/watch?v=fDnqXmLSqtg)  
@@ -66,7 +66,7 @@ Other Resources:
 figma: [Figma link](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849)                                      
 [How to be Successful in Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit)
 
-## GitHub Cheat Sheet 
+## GitHub Cheat Sheet 🌟
 
 General Use
 
@@ -82,7 +82,7 @@ General Use
 | git push origin "branch" | Push to branch |
 | git pull origin "branch" | Pull updates from a specific branch |
 
-## Developers!! 
+## Developers‼️‼️ 
 Sai Peram                                                                                    
 Soujanya Prakash Kamalapur                                                                          
 Swayam Arora                                                                                 

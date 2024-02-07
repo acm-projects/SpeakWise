@@ -69,7 +69,7 @@ Feature Tutorials:
 
 
 Other Resources:                                                                                                                             
-[Figma](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849) 
+[Figma](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849)                                                                                                                                     
 [Helpful Vids Playlist](https://youtube.com/playlist?list=PLKjOhYfrGFCatnsBMIHOX0JVfcVbSZWSW&si=2M_sZDABO2NeyfB)
 
 

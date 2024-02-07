@@ -48,7 +48,7 @@ Installation & Set Up:
 [Firebase w/ Flutter Set Up](https://www.youtube.com/watch?v=EXp0gq9kGxI&t=15s)  
 [Install VSCode](https://code.visualstudio.com/) 
 
-Intro Tutorials:  
+Tutorials:  
 [Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)   
 [Flutter Documentation](https://docs.flutter.dev/)                                             
 [Adding Firebase to Flutter App](https://firebase.google.com/docs/flutter/setup?platform=ios)  
@@ -62,10 +62,6 @@ API's:
 [Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/docs/reference/rest)                                                                                                                                  
 [Google Cloud Natural Language API](https://cloud.google.com/natural-language/docs/basics)                                                                                                                                      
 [GPT-3 API](https:///www.educative.io/answers/how-to-get-api-key-of-gpt-3)
-
-Feature Tutorials:
-
-
 
 
 Other Resources:                                                                                                                             

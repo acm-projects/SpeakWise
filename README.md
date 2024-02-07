@@ -91,7 +91,7 @@ Sai Peram
 Soujanya Prakash Kamalapur                                                                          
 Swayam Arora                                                                                 
 Charitha Sarraju                                                                              
-Ifrah Zainab 
+Maunika Achanta 
 
 Kanchan Javalkar - *Project Manager*  
 Erik Rodriguez - *Industry Mentor*

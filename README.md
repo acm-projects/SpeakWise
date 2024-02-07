@@ -49,7 +49,10 @@ Installation & Set Up:
 [Install Android Studios](https://developer.android.com/studio/install?gclid=CjwKCAiAuOieBhAIEiwAgjCvcjwYSPTJuW9nn167xix8BzL8KzlDuCIwczz-JaqpBWLl1LyPWHwV1xoCWf0QAvD_BwE&gclsrc=aw.ds#mac)  
 
 Tutorials:  
-[Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)  
+[Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ) 
+[Flutter Documentation](https://docs.flutter.dev/) 
+[Adding Firebase to Flutter App](https://firebase.google.com/docs/flutter/setup?platform=ios)
+[Firebase Documentation](https://firebase.google.com/docs)
 [Figma Tutorial](https://www.youtube.com/watch?v=FTFaQWZBqQ8)  
 [Dart Tutorial](https://www.youtube.com/watch?v=veMhOYRib9o&t=812s)  
 [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE)  

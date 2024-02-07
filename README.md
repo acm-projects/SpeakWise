@@ -46,9 +46,9 @@ Installation & Set Up:
 [Flutter Installation for Mac OS](https://www.youtube.com/watch?v=fzAg7lOWqVE)  
 [Flutter Installation for Windows](https://www.youtube.com/watch?v=fDnqXmLSqtg)  
 [Firebase w/ Flutter Set Up](https://www.youtube.com/watch?v=EXp0gq9kGxI&t=15s)  
-[Install Android Studios](https://developer.android.com/studio/install?gclid=CjwKCAiAuOieBhAIEiwAgjCvcjwYSPTJuW9nn167xix8BzL8KzlDuCIwczz-JaqpBWLl1LyPWHwV1xoCWf0QAvD_BwE&gclsrc=aw.ds#mac)  
+[Install VSCode](https://code.visualstudio.com/) 
 
-Tutorials:  
+Intro Tutorials:  
 [Flutter Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)   
 [Flutter Documentation](https://docs.flutter.dev/)                                             
 [Adding Firebase to Flutter App](https://firebase.google.com/docs/flutter/setup?platform=ios)  
@@ -59,14 +59,19 @@ Tutorials:
 [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)  
 
 API's:  
-- [Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/docs/reference/rest)                                           
-- [Google Cloud Natural Language API](https://cloud.google.com/natural-language/docs/basics)
-- [GPT-3 API](https:///www.educative.io/answers/how-to-get-api-key-of-gpt-3)
+[Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/docs/reference/rest)                                                                                                                                  
+[Google Cloud Natural Language API](https://cloud.google.com/natural-language/docs/basics)                                                                                                                                      
+[GPT-3 API](https:///www.educative.io/answers/how-to-get-api-key-of-gpt-3)
+
+Feature Tutorials:
+
 
 
 
 Other Resources:                                                                                                                             
-figma: [Figma link](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849) 
+[Figma](https://www.figma.com/files/project/81846282/Team-project?fuid=1155168864304822849) 
+[Helpful Vids Playlist](https://youtube.com/playlist?list=PLKjOhYfrGFCatnsBMIHOX0JVfcVbSZWSW&si=2M_sZDABO2NeyfB)
+
 
 [How to be Successful in Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit)
 

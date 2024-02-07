@@ -1,11 +1,10 @@
 # SpeakWise
 
-<p align="center">
-  <img src="[demo.gif](https://github.com/acm-projects/SpeakWise/assets/112922432/463d7323-d94d-4dad-ad6b-39a99ba1cde9)" alt="animated" />
-</p>
+
 
 ![giphy](https://github.com/acm-projects/SpeakWise/assets/112922432/463d7323-d94d-4dad-ad6b-39a99ba1cde9)
 
+![giphy](giphy.gif)
 
 <h1 align="center"> SpeakWise </h1>
 

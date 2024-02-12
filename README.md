@@ -67,7 +67,8 @@ Resources for Design:
 [Best App Design](https://dribbble.com/tags/best-app-design)                                                                                                                                                                    
 [Dribble](https://dribbble.com/)                                                                                                                                                                                                
 [Color Palettes](https://www.canva.com/colors/color-palettes/)                                                                                                                                                                  
-[More Color Palettes](https://colorhunt.co/)
+[More Color Palettes](https://colorhunt.co/)                                                                                                                                                                                    
+[Do's and Don'ts of Mobile App Design](https://realmonkey.co/mobile-app-design/the-dos-and-donts-of-mobile-app-design/)
 
 
 

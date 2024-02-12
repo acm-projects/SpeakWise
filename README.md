@@ -50,7 +50,6 @@ Installation & Set Up:
 
 Tutorials:  
 [Flutter/Dart Intro (helpful for frontend)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)       
-
 [Flutter/Dart Intro (helpful for backend)](https://www.youtube.com/watch?v=sfA3NWDBPZ4&list=PL4cUxeGkcC9j--TKIdkb3ISfRbJeJYQwC)                                                                                                                                             
 
 [Flutter Documentation](https://docs.flutter.dev/)                                             
@@ -61,8 +60,7 @@ Tutorials:
 [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE)  
 
 Git Cheat Sheets:                                                                                                                                                                                                               
-[Git Cheat Sheet 1](https://education.github.com/git-cheat-sheet-education.pdf)  
-
+[Git Cheat Sheet 1](https://education.github.com/git-cheat-sheet-education.pdf)                                                                                                                                                 
 [Git Cheat Sheet 2](https://drive.google.com/file/d/1OddwoSvNJ3dQuEBw3RERieMXmOicif9_/view)  
 
 Resources for Design:

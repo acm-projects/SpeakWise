@@ -64,7 +64,8 @@ Git Cheat Sheets:
 [Git Cheat Sheet 2](https://drive.google.com/file/d/1OddwoSvNJ3dQuEBw3RERieMXmOicif9_/view)  
 
 Resources for Design:                                                                                                                                                                                                           
-[Dribble](https://dribbble.com/)
+[Dribble](https://dribbble.com/)                                                                                                                                                                                                
+[Color Palettes](https://www.canva.com/colors/color-palettes/)
 
 API's:  
 [Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/docs/reference/rest)                                                                                                                                  

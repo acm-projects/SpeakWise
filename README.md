@@ -64,7 +64,7 @@ Git Cheat Sheets:
 [Git Cheat Sheet 2](https://drive.google.com/file/d/1OddwoSvNJ3dQuEBw3RERieMXmOicif9_/view)  
 
 Resources for Design:    
-[Best App Design](https://dribbble.com/tags/best-app-design) - copy and paste url if it takes you to forbidden                                                                                                                  
+[Best App Design](https://dribbble.com/tags/best-app-design) - copy and paste link if it takes you to forbidden                                                                                                                 
 [Dribble](https://dribbble.com/)                                                                                                                                                                                                
 [Color Palettes](https://www.canva.com/colors/color-palettes/)                                                                                                                                                                  
 [More Color Palettes](https://colorhunt.co/)                                                                                                                                                                                    

@@ -63,11 +63,12 @@ Git Cheat Sheets:
 [Git Cheat Sheet 1](https://education.github.com/git-cheat-sheet-education.pdf)                                                                                                                                                 
 [Git Cheat Sheet 2](https://drive.google.com/file/d/1OddwoSvNJ3dQuEBw3RERieMXmOicif9_/view)  
 
-Resources for Design:                                                                                                                                                                                                           
+Resources for Design:    
+[Best App Design](https://dribbble.com/tags/best-app-design)
 [Dribble](https://dribbble.com/)                                                                                                                                                                                                
 [Color Palettes](https://www.canva.com/colors/color-palettes/)                                                                                                                                                                  
 [More Color Palettes](https://colorhunt.co/)
-[Best App Design](https://dribbble.com/tags/best-app-design)
+
 
 
 API's:  

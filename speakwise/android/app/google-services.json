@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "247404803957",
+    "project_id": "speakwise-258a0",
+    "storage_bucket": "speakwise-258a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247404803957:android:30563ab8a2c6caa333053c",
+        "android_client_info": {
+          "package_name": "com.ACMProjects.speakwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-jvInpap8oujI_pzUA_hWkY0G2tp11hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

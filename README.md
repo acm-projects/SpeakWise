@@ -108,7 +108,7 @@ Swayam Arora
 Charitha Sarraju                                                                              
 Maunika Achanta 
 
-Kanchan Javalkar - *Project Manager* :)
+Kanchan Javalkar - *Project Manager* ---
 Erik Rodriguez - *Industry Mentor*
 
 

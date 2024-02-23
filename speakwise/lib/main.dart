@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 16, 70, 29)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'SpeakWise '),
+      home: const MyHomePage(title: 'Sai Peram '),
     );
   }
 }

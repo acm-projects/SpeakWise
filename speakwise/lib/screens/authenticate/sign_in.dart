@@ -15,17 +15,9 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
       backgroundColor: Colors.orange[400],
       elevation: 0.0,
-      title: Text('Sign in to SpeakWise')
-      ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: ElevatedButton(
-          child: Text('Sign in'),
-          onPressed: () async{
-            
-          },
+    
+
       )
-    )
     );
   }
 }

@@ -1,7 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -9,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/swaya/Desktop/SpeakWise/speakwise/linux",
-      "program": "c:/Users/swaya/Desktop/SpeakWise/speakwise/linux/build/Debug/outDebug",
+      "cwd": "c:/Users/swaya/Desktop/SpeakWise/speakwise/android/app/src/main/kotlin/com/example/speakwise",
+      "program": "c:/Users/swaya/Desktop/SpeakWise/speakwise/android/app/src/main/kotlin/com/example/speakwise/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,16 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
+import 'package:speakwise/screens/createAccount/createAccountPage.dart';
+import 'package:speakwise/screens/LoginPage/LoginPage.dart';
+
+import 'package:speakwise/constants/colors.dart';
+
+
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); 
 }
-class MyApp extends StatelessWidget {
+
+
+
+ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: whitishBg));
+  return MaterialApp( 
+    debugShowCheckedModeBanner: false,
+    title: 'First Page',
+    home: createAccount(), //change to createAccountPage
+  );
+  } 
+}
+  /* Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -31,10 +52,74 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'SpeakWise'),
+      //createAccount: createAccountPage(),
     );
+  } 
+} */
+/* class createAccount extends StatelessWidget {
+  const createAccount({super.key});
+  @override 
+  Widget build(BuildContext context) {
+    return Scaffold( 
+      
+      backgroundColor: tdBGcolor,
+      appBar: AppBar( 
+        backgroundColor: tdBGcolor,
+        elevation: 0,
+      ),
+
+
+      body: Center(
+        
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const Text(
+              'SpeakWise.',
+              style: TextStyle(
+                
+                
+            fontSize: 58.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: Color.fromARGB(255, 5, 37, 63),
+          ),
+              //style: Theme.of(context).textTheme.headlineMedium,
+            ),
+           
+          ],
+        ),
+      ),
+
+     /* body: Center(
+        child: Column (
+          children: <Widget> [
+            const Text (
+          'SpeakWise'
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: Color.fromARGB(255, 5, 37, 63),
+          ),
+          ),
+          ],
+
+        ),
+        
+        ), */
+      
+  ); 
+      
+    
+    
   }
-}
-class MyHomePage extends StatefulWidget {
+} */
+
+ /* class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -47,6 +132,8 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   void _incrementCounter() {
@@ -112,8 +199,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-}
+  } */
+
 
 
 

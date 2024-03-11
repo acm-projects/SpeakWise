@@ -4,15 +4,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:speakwise/screens/createAccount/createAccountPage.dart';
 import 'package:speakwise/screens/LoginPage/LoginPage.dart';
-
+import 'package:speakwise/screens/homePage.dart';
 import 'package:speakwise/constants/colors.dart';
-
+import 'package:speakwise/screens/questionCard/QuestionPage.dart';
 
 void main() {
   runApp(const MyApp()); 
 }
-
-
 
  class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,8 +21,8 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: whitishBg));
   return MaterialApp( 
     debugShowCheckedModeBanner: false,
-    title: 'First Page',
-    home: createAccount(), //change to createAccountPage
+    //home: createAccount(), //change to createAccountPage
+    home: QuestionPage(),
   );
   } 
 }

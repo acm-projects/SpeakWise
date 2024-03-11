@@ -8,6 +8,11 @@ import 'package:speakwise/screens/homePage.dart';
 import 'package:speakwise/constants/colors.dart';
 import 'package:speakwise/screens/questionCard/QuestionPage.dart';
 
+import 'package:speakwise/screens/Record_Screen.dart';
+import 'package:speakwise/screens/InterviewAnalysisScreen.dart';
+import 'package:speakwise/screens/LoginOrCreateAccount_screen.dart';
+import 'package:speakwise/screens/InterviewQuestions_screen.dart';
+
 void main() {
   runApp(const MyApp()); 
 }

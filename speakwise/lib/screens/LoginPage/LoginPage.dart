@@ -142,8 +142,8 @@ class LoginAccount extends StatelessWidget {
               String password = password_T.text;
               
 
-              print('Name: $username');
-              print('Email: $password');
+              print('UserName: $username');
+              print('password: $password');
              
             },
             

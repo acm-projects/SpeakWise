@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:speakwise/constants/colors.dart';
+import 'package:speakwise/screens/LoginPage/LoginPage.dart';
 
 
  void main() {
@@ -9,6 +10,7 @@ import 'package:speakwise/constants/colors.dart';
     ),
     debugShowCheckedModeBanner: false,
     home: createAccount(),
+    
     
   ));
 }
@@ -118,7 +120,7 @@ class createAccount extends StatelessWidget {
             
           SizedBox(height: 10),
             Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              //width: 300,
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
               child: Container( 
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration( 
@@ -136,7 +138,7 @@ class createAccount extends StatelessWidget {
 
           SizedBox(height: 10),
             Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              //width: 300,
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
               child: Container( 
               padding: EdgeInsets.symmetric(horizontal: 30),
               decoration: BoxDecoration( 
@@ -154,7 +156,7 @@ class createAccount extends StatelessWidget {
 
          SizedBox(height: 10),
             Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              //width: 300,
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
               child: Container( 
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration( 
@@ -174,7 +176,7 @@ class createAccount extends StatelessWidget {
 ////////////////////////////////
           SizedBox(height: 10),
             Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              //width: 300,
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
               child: Container( 
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 decoration: BoxDecoration( 

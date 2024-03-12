@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:speakwise/services/auth.dart';
+import 'package:speakwiseproject/services/auth.dart';
 class SignIn extends StatefulWidget{
 
   @override

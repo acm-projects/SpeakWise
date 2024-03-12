@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(
       Duration(seconds: 3),(){
-      Navigator.pushNamedAndRemoveUntil(context as BuildContext, MaterialPageRoute(builder: (context) => widget.child!) as String, (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, MaterialPageRoute(builder: (context) => widget.child!) as String, (route) => false);
     }
     );
     super.initState();

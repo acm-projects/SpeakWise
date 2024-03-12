@@ -1,22 +1,21 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
-import 'package:speakwise/features/app/splash_screen/splash_screen.dart';
-import 'package:speakwise/features/user_auth/presentation/pages/login_page.dart';
-import 'package:speakwise/screens/wrapper.dart';
-import 'package:speakwise/services/auth.dart';
-import 'package:speakwise/models/user.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:speakwiseproject/features/user_auth/presentation/pages/login_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  /*
   if (kIsWeb) {
-    await Firebase.initilizApp(options: const FirebaseOptions(apiKey: "AIzaSyCnsdmtTC3USIq5MQ1omPbZS-Mx3ziIS8c", appId: "1:553591940723:web:a4446f0c7f31db5d9fec06", messagingSenderId: "553591940723", projectId: "speakwise-app-82e5c"));
+    await Firebase.initializeApp(options: const FirebaseOptions(apiKey: "AIzaSyCnsdmtTC3USIq5MQ1omPbZS-Mx3ziIS8c", appId: "1:553591940723:web:a4446f0c7f31db5d9fec06", messagingSenderId: "553591940723", projectId: "speakwise-app-82e5c"));
   }
+  else {
+    await Firebase.initializeApp();
+  }
+  */
+    await Firebase.initializeApp();
 
+
+  
   runApp(const MyApp());
 }
 
@@ -27,11 +26,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Firebase',
-      home: SplashScreen(
-          child: LoginPage(),
-      )
-      );
+      title: 'SpeakWise',
+      home: LoginPage(),
+      
+    );
   }
 }
 class MyHomePage extends StatefulWidget {

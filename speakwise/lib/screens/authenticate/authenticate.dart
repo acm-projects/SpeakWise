@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:speakwise/screens/authenticate/sign_in.dart';
+import 'package:speakwiseproject/screens/authenticate/sign_in.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({super.key});

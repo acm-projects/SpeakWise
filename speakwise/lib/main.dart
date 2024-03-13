@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:speakwise/screens/StartUp_page.dart';
 import 'package:speakwise/screens/createAccount/createAccountPage.dart';
-import 'package:speakwise/screens/LoginPage/LoginPage.dart';
+import 'package:speakwise/screens/LoginPage.dart';
 import 'package:speakwise/screens/homePage.dart';
 import 'package:speakwise/constants/colors.dart';
 import 'package:speakwise/screens/questionCard/QuestionPage.dart';
@@ -30,8 +30,9 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: whitishBg));
   return MaterialApp( 
     debugShowCheckedModeBanner: false,
-    //home: createAccount(), //change to createAccountPage
-    home: StartUp(),
+    //home: LoginAccount(), //change to createAccountPage
+    home: createAccount(),
+    //home: StartUp(),
   );
   } 
 }

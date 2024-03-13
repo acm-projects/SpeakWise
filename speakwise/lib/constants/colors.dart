@@ -9,3 +9,4 @@ const Color newBgColor = Color.fromARGB(255, 26, 32, 64);
 const Color TSpurpleColor = Color.fromARGB(255, 199, 134, 190);
 const Color BgShadedBlue = Color.fromARGB(255, 52, 59, 97);
 const Color TextColor = Color.fromARGB(255, 208, 214, 246);
+const Color PurpleishColor = Color.fromARGB(255, 117, 58, 122);

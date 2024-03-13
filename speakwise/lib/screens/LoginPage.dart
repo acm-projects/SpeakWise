@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:speakwise/constants/colors.dart';
-import 'package:speakwise/screens/LoginPage.dart';
 
 
  void main() {
@@ -9,22 +8,18 @@ import 'package:speakwise/screens/LoginPage.dart';
      // primaryColor: Colors.purple
     ),
     debugShowCheckedModeBanner: false,
-    home: createAccount(),
-    
+    home: LoginAccount(),
     
   ));
 }
 
-class createAccount extends StatelessWidget {
+class LoginAccount extends StatelessWidget {
   //const createAccount({super.key});
   
   @override 
-  TextEditingController name_text = TextEditingController(); 
-  TextEditingController email_text = TextEditingController(); 
-  //TextEditingController  username_text = TextEditingController(); 
-  TextEditingController password_text = TextEditingController();  
-  //TextEditingController confirm_text = TextEditingController();  
-
+  TextEditingController email_T = TextEditingController(); 
+  TextEditingController password_T = TextEditingController(); 
+  
 
   Widget build(BuildContext context) {
     return SafeArea( 
@@ -38,50 +33,10 @@ class createAccount extends StatelessWidget {
       
       body: Stack ( 
          children: [
-
-                  
-                  Positioned( 
-                    top: -60,
-                    left: 230,
-                    child: ClipRect(
-                      child: Container( 
-                        width: 150,
-                        height: 250,    
-                        decoration: BoxDecoration( 
-                          color: newBgColor,
-                          border: Border.all(
-                            color: PurpleishColor,
-                            width: 2.5,
-                            ),
-                          borderRadius: BorderRadius.circular(60),
-              
-                        ),                       
-                      ),
-                    ),                    
-                  ),
-
-                  Positioned( 
-                    top: -80,
-                    left: 270,
-                    child: ClipRect(
-                      child: Container( 
-                        width: 150,
-                        height: 250,    
-                        decoration: BoxDecoration( 
-                          color: TSpurpleColor,
-                          borderRadius: BorderRadius.circular(60),
-              
-                        ),  
-                      
-                    ),
-                    ),
-                    
-                  ),
                 
-            //bottom shapes
-            Positioned( 
-                    bottom: -60,
-                    left: 40,
+          Positioned( 
+                    top: -60,
+                    left: 20,
                     child: ClipRect(
                       child: Container( 
                         width: 140,
@@ -100,8 +55,46 @@ class createAccount extends StatelessWidget {
                   ),
 
                   Positioned( 
+                    top: -80,
+                    left: -20,
+                    child: ClipRect(
+                      child: Container( 
+                        width: 140,
+                        height: 250,    
+                        decoration: BoxDecoration( 
+                          color: TSpurpleColor,
+                          borderRadius: BorderRadius.circular(60),
+              
+                        ),  
+                      
+                    ),
+                    ),
+                    
+                  ),
+//bottom shapes
+                  Positioned( 
                     bottom: -60,
-                    left: 20,
+                    left: 250,
+                    child: ClipRect(
+                      child: Container( 
+                        width: 130,
+                        height: 250,    
+                        decoration: BoxDecoration( 
+                          color: newBgColor,
+                          border: Border.all(
+                            color: PurpleishColor,
+                            width: 2.5,
+                            ),
+                          borderRadius: BorderRadius.circular(60),
+              
+                        ),                       
+                      ),
+                    ),                    
+                  ),
+
+                  Positioned( 
+                    bottom: -60,
+                    left: 220,
                     child: ClipRect(
                       child: Container( 
                         width: 130,
@@ -118,24 +111,32 @@ class createAccount extends StatelessWidget {
                   ),
                 
 
-
             Center(
            child: Column(
          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-           /* SizedBox(height: 50),
-            EmptyCircle(color: pinkish),       */        
-            
                 
             SizedBox(height: 190), //where to place the speakwise logo
             const Text(
-              'Hello.         ',
+              '      Welcome',
               style: TextStyle(
-            fontSize: 58.0,
+            fontSize: 55.0,
             fontWeight: FontWeight.bold,
             
             letterSpacing: 2.0,
             color: TextColor,
+          ),
+            ),
+             //SizedBox(height:0 ), 
+            const Text(
+              '            Back.',
+              style: TextStyle(
+                fontFamily: 'Baloo',
+            fontSize: 55.0,
+            fontWeight: FontWeight.bold,
+            
+            letterSpacing: 2.0,
+           color: TextColor,
           ),
             ),
 
@@ -152,70 +153,23 @@ class createAccount extends StatelessWidget {
               
               child: Padding( 
                 padding: const EdgeInsets.only(left: 20),
+                
                 child: TextField( 
-              controller: name_text,
-              /*style: TextStyle( 
-                color: TextColor),*/
-              decoration: InputDecoration( 
-                hintText: 'Name',
-                hintStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-
-                 ), ),
+              controller: email_T,
+              style: TextStyle( 
+                color: TextColor,
+                //fontSize: 17.0,
+                ),
+              decoration: InputDecoration(
+                
+                 hintText: 'Email'),
              ),
               )
           
           ),
             ),
 
-           SizedBox(height: 10),
-            Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
-              child: Container( 
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                decoration: BoxDecoration( 
-                border: Border.all(color: Color.fromARGB(255, 5, 37, 63)),
-                borderRadius: BorderRadius.circular(13),
-                color: TextColor,
-               ),
-              
-                child: Padding( 
-                padding: const EdgeInsets.only(left: 20),
-                child: TextField( 
-              controller: email_text,
-              /*style: TextStyle( 
-                color: TextColor),*/
-              decoration: InputDecoration( hintText: 'Email',
-              hintStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-
-                 ), 
-                 ),
-             ),
-              )
-              
-            ),
-          ), 
-
-          /*SizedBox(height: 10),
-            Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
-              child: Container( 
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              decoration: BoxDecoration( 
-                color: Colors.white,
-                border: Border.all(color: Color.fromARGB(255, 5, 37, 63)),
-                borderRadius: BorderRadius.circular(13),
-               ),
-              
-              child: TextField( 
-              controller: username_text,
-              decoration: InputDecoration(hintText: 'Enter an Username'),
-             ),
-            ),
-          ), */
-
-         SizedBox(height: 10),
+          SizedBox(height: 10),
             Padding( 
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
                     child: Container(
@@ -229,61 +183,32 @@ class createAccount extends StatelessWidget {
               child: Padding( 
                 padding: const EdgeInsets.only(left: 20),
                 child: TextField( 
-              controller: password_text,
-              /*style: TextStyle( 
-                color: TextColor),*/
-              decoration: InputDecoration( hintText: 'Enter a Password',
-              hintStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-
-                 ), 
-              ),
+              controller: password_T,
+              decoration: InputDecoration( hintText: 'Password'),
              ),
               )
           
           ),
             ),
+            
 
-          /* SizedBox(height: 10),
-            Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),              
-              child: Container( 
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                decoration: BoxDecoration( 
-                  color: Colors.white,
-                  border: Border.all(color: Color.fromARGB(255, 5, 37, 63)),
-                  borderRadius: BorderRadius.circular(13),
-              ),
-              
-            child: TextField( 
-              controller: confirm_text,
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'Confirm Password'),
-             ),
-            ),
-          ), */
 
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             ElevatedButton( 
               
             onPressed: () { 
               
               print('Create account button pressed');
-              String name = name_text.text;
-              String email = email_text.text;
-              //String username = username_text.text;
-              String password = password_text.text;
-              //String Confirm_Password = confirm_text.text;
+              String email = email_T.text;
+              String password = password_T.text;
+              
 
-              print('Name: $name');
-              print('Email: $email');
-              //print('Username: $username');
-              print('Password: $password');
-             // print('Confirm Password: $Confirm_Password');
+              print('UserName: $email');
+              print('password: $password');
+             
             },
             
-            child: Text('Sign Up',
+            child: Text('Login',
               style: TextStyle(
                 color: newBgColor,
                 fontWeight: FontWeight.w900,
@@ -298,11 +223,9 @@ class createAccount extends StatelessWidget {
                     width: 2,
                    )
                 )
-                //borderRadius: BorderRadius.all(20),
 
 
                )
-               
         
             ), 
           ],
@@ -331,41 +254,4 @@ class createAccount extends StatelessWidget {
 
 
 } 
-
-/*
-class EmptyCircle extends StatelessWidget{ 
-  final Color color;
-  EmptyCircle({Key? key, required this.color}) : super(key: key);
-@override
-Widget build(BuildContext context) { 
-    return CustomPaint( 
-      size: Size(275,10),
-      painter: EmptyCirclePainter(color: color),
-    );
-  }
-}
-
-class EmptyCirclePainter extends CustomPainter {
-  final Color color;
-  EmptyCirclePainter({this.color = const Color.fromARGB(255, 249, 196, 173)});
-    
-  @override 
-  void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()
-    ..color = color
-    ..style = PaintingStyle.stroke..strokeWidth = 3.0;
-
-    final radius = size.width / 2.0;
-    final middle = Offset(size.width / 9, size.height / 20);
-
-    canvas.drawCircle(middle, radius , paint);
-  }
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
-    // TODO: implement shouldRepaint
-  }
-} */
-
-
 

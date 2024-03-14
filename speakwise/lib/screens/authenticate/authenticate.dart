@@ -11,8 +11,9 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
-      child: SignIn(), 
+      child:  const SignIn(), 
     );
   }
 }

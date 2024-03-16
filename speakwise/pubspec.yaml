@@ -44,6 +44,13 @@ dependencies:
   font_awesome_flutter: ^10.6.0
   google_sign_in: ^6.1.5
   provider: ^6.1.2
+  speech_to_text: ^6.1.1
+  loading_animation_widget: ^1.2.0+4
+  assets_audio_player: ^3.0.3+3
+  permission_handler: ^8.1.2
+  path: ^1.8.0
+  flutter_sound: ^8.1.9
+  audio_session: ^0.1.6
 
 dev_dependencies:
   flutter_test:

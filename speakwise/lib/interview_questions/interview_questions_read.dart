@@ -5,7 +5,7 @@ Future<List<String>> readInterviewQuestions() async {
 
   try {
     // Open the file
-    final file = File('lib/interview_questions/sample_questions.dart');
+    final file = File('lib/interview_questions/sample_questions.txt');
 
     // Read the contents of the file
     List<String> lines = await file.readAsLines();

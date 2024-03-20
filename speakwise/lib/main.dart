@@ -1,15 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:speakwise/features/user_auth/presentation/pages/login_page.dart';
-import 'firebase_options.dart';
-void main() async {
 import 'package:speakwise/screens/LoginPage.dart';
-import 'audioRecording/home_screen.dart';
-import 'package:speakwise/screens/StartUp_page.dart';
-import 'package:speakwise/screens/createAccount/createAccountPage.dart';
-import 'package:speakwise/screens/homePage.dart';
-import 'package:speakwise/constants/colors.dart';
-import 'package:speakwise/screens/questionCard/QuestionPage.dart';
+import 'firebase_options.dart';
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,87 +1,26 @@
 {
   "project_info": {
-    "project_number": "553591940723",
-    "project_id": "speakwise-app-82e5c",
-    "storage_bucket": "speakwise-app-82e5c.appspot.com"
+    "project_number": "247404803957",
+    "project_id": "speakwise-258a0",
+    "storage_bucket": "speakwise-258a0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:553591940723:android:39acd13c1c2114799fec06",
+        "mobilesdk_app_id": "1:247404803957:android:30563ab8a2c6caa333053c",
         "android_client_info": {
           "package_name": "com.ACMProjects.speakwise"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "553591940723-bds605125sqj8q8c4g4amefuudsgb737.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ACMProjects.speakwise",
-            "certificate_hash": "73584f8292cc3a84871fdddbb25552f303be256c"
-          }
-        },
-        {
-          "client_id": "553591940723-o0tqrjpigku2uu2qra0nh9akbr22qd0h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBowVs24FYmVxnk8bOzwm9WtnhsHfdhTOM"
+          "current_key": "AIzaSyB-jvInpap8oujI_pzUA_hWkY0G2tp11hc"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "553591940723-o0tqrjpigku2uu2qra0nh9akbr22qd0h.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "553591940723-20lfmg3jdgm9p72qa0jeersoe6thb0p8.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.speakwise"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:553591940723:android:0b450dcfa317f25f9fec06",
-        "android_client_info": {
-          "package_name": "com.example.speakwiseproject"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "553591940723-o0tqrjpigku2uu2qra0nh9akbr22qd0h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBowVs24FYmVxnk8bOzwm9WtnhsHfdhTOM"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "553591940723-o0tqrjpigku2uu2qra0nh9akbr22qd0h.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "553591940723-20lfmg3jdgm9p72qa0jeersoe6thb0p8.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.speakwise"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

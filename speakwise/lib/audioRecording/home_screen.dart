@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void stopListeningNow() async {
     await speechToTextInstance.stop();
     setState(() {});
+
   }
 
   void onSpeechToTextResult(SpeechRecognitionResult recognitionResult) {
@@ -50,40 +51,43 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white,
-        onPressed: () {},
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Image.asset("images/sound.png"),
-        ),
-      ),
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            Colors.purpleAccent.shade100,
-            Colors.deepPurple,
-          ])),
-        ),
-        title: Image.asset(
-          "images/logo.png",
-          width: 140,
-        ),
-        titleSpacing: 10,
-        elevation: 2,
-      ),
+     return Scaffold(
+    //   floatingActionButton: FloatingActionButton(
+         backgroundColor: Colors.purple,
+    //     onPressed: () {},
+    //    
+    //   ),
+      // appBar: AppBar(
+      //   flexibleSpace: Container(
+      //     decoration: BoxDecoration(
+      //         gradient: LinearGradient(colors: [
+      //       Colors.purpleAccent.shade100,
+      //       Colors.deepPurple,
+      //     ])),
+      //   ),
+      //   titleSpacing: 10,
+      //   elevation: 2,
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
+               const SizedBox(
+                height: 300,
+              ),
+              // Display recorded text
+              if (recordedAudioString.isNotEmpty)
+                Text(
+                  recordedAudioString, 
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
+                ),
               const SizedBox(
-                height: 40,
+                height: 275,
               ),
               //image
-              Center(
+              Align(
+                alignment: Alignment.bottomLeft,
                 child: InkWell(
                   onTap: () {
                     speechToTextInstance.isListening
@@ -91,32 +95,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         : startListeningNow();
                   },
                   child: speechToTextInstance.isListening
-                      ? Center(
+                      ? Align(
+                        alignment: Alignment.bottomLeft,
                           child: LoadingAnimationWidget.beat(
-                            size: 300,
+                            size: 150,
                             color: speechToTextInstance.isListening
                                 ? Colors.deepPurple
                                 : isLoading
-                                    ? Colors.deepPurple[400]!
-                                    : Colors.deepPurple[200]!,
+                                    ? Colors.deepPurple[75]!
+                                    : Colors.deepPurple[37]!,
                           ),
                         )
                       : Image.asset(
                           "images/assistant_icon.png",
-                          height: 300,
-                          width: 300,
+                          height: 150,
+                          width: 150,
                         ),
                 ),
               ),
-              const SizedBox(
-                height: 50,
-              ),
-              // Display recorded text
-              if (recordedAudioString.isNotEmpty)
-                Text(
-                  recordedAudioString,
-                  style: TextStyle(fontSize: 18),
-                ),
             ],
           ),
         ),

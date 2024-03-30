@@ -51,6 +51,8 @@ dependencies:
   path: ^1.8.0
   flutter_sound: ^8.1.9
   audio_session: ^0.1.6
+  http: ^0.13.4
+  audioplayers: ^6.0.0
 
 dev_dependencies:
   flutter_test:

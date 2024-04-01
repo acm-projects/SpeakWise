@@ -39,12 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void stopListeningNow() async {
-    await speechToTextInstance.stop();
-    _cancelTimer();
-    setState(() {
-      saveTextToFile(recordedAudioString); // Save the recorded text to file
-    });
-  }
+  await speechToTextInstance.stop();
+  _cancelTimer();
+  // Wait for 1 second to ensure recognition finishes processing
+  await Future.delayed(Duration(seconds: 1));
+  setState(() {
+    saveTextToFile(recordedAudioString); // Save the recorded text to file
+  });
+}
 
   void onSpeechToTextResult(SpeechRecognitionResult recognitionResult) {
     print("Speech Result: ${recognitionResult.recognizedWords}");
@@ -52,19 +54,18 @@ class _HomeScreenState extends State<HomeScreen> {
       recordedAudioString = recognitionResult.recognizedWords;
     });
   }
-
-  Future<void> saveTextToFile(String text) async {
+Future<void> saveTextToFile(String text) async {
+  try {
     final directory = await getApplicationSupportDirectory();
     final directoryPath = '${directory.path}/audioTextFiles';
     final file = File('$directoryPath/recorded_text.txt');
-
-    // // Create the directory if it doesn't exist
-    // if (!await Directory(directoryPath).exists()) {
-    //   await Directory(directoryPath).create(recursive: true);
-    // }
-
+    print('File path: ${file.path}'); // Print file path for debugging
     await file.writeAsString(text);
+    print('Text saved successfully!');
+  } catch (e) {
+    print('Error saving text: $e');
   }
+}
 
   void _startTimer() {
     const oneSecond = Duration(seconds: 1);
@@ -96,96 +97,96 @@ class _HomeScreenState extends State<HomeScreen> {
     initializeSpeechToText();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: newBgColor,
-      body: Stack(
-        children: [
-          const Positioned( //the first circle on the top left
-            left: -60,
-            top: 150,
-            child: CircleAvatar(
-              backgroundColor: TSpurpleColor,
-              radius: 120,
-            ),
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    resizeToAvoidBottomInset: false,
+    backgroundColor: newBgColor,
+    body: Stack(
+      children: [
+        const Positioned( //the first circle on the top left
+          left: -60,
+          top: 150,
+          child: CircleAvatar(
+            backgroundColor: TSpurpleColor,
+            radius: 120,
           ),
-          Positioned(//open circle on left
-            left: -5,
-            top: 625,
-            child: EmptyCircle(color: TextColor),
+        ),
+        Positioned(//open circle on left
+          left: -5,
+          top: 625,
+          child: EmptyCircle(color: TextColor),
+        ),
+        Positioned(//open circle on right
+          right: -100,
+          top: 300,
+          child: EmptyCircle(color: TextColor),
+        ),
+        const Positioned( //circle on right below
+          right: -20,
+          bottom: -50,
+          child: CircleAvatar(
+            backgroundColor: TSpurpleColor,
+            radius: 100,
           ),
-          Positioned(//open circle on right
-            right: -100,
-            top: 300,
-            child: EmptyCircle(color: TextColor),
-          ),
-          const Positioned( //circle on right below
-            right: -20,
-            bottom: -50,
-            child: CircleAvatar(
-              backgroundColor: TSpurpleColor,
-              radius: 100,
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                //top speakwise
-                SizedBox(height: 40), //where to place the speakwise logo
-                Text(
-                  '  SpeakWise.  ',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2.0,
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              //top speakwise
+              SizedBox(height: 40), //where to place the speakwise logo
+              Text(
+                '  SpeakWise.  ',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  color: TextColor,
+                ),
+              ),
+              SizedBox(height: 10), // Adjust this height as needed
+              SizedBox(
+                height: 50,
+                width: 100,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
                     color: TextColor,
                   ),
-                ),
-                SizedBox(height: 10), // Adjust this height as needed
-                SizedBox(
-                  height: 50,
-                  width: 100,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: TextColor,
-                    ),
-                    child: Center(
-                      child: Text(
-                        _formatTime(_seconds),
-                        style: TextStyle(fontSize: 20, color: BgShadedBlue),
-                      ),
+                  child: Center(
+                    child: Text(
+                      _formatTime(_seconds),
+                      style: TextStyle(fontSize: 20, color: BgShadedBlue),
                     ),
                   ),
                 ),
-                SizedBox(height: 60),
-                RoundedRectangle(
-                  width: 317,
-                  height: 510
-                ),
-              ]
-            ),
-          ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-            children: [
-               const SizedBox(
-                height: 300,
               ),
-              // Display recorded text
-              if (recordedAudioString.isNotEmpty)
-                Text(
-                  recordedAudioString, 
-                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
-                ),
-                SizedBox(
-                  height: 275,
-                ),
+              SizedBox(height: 60),
+              RoundedRectangle(
+                width: 317,
+                height: 510
+              ),
+            ]
+          ),
+        ),
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                SizedBox(height: 300),
+                // Display recorded text
+                if (recordedAudioString.isNotEmpty)
+                  Container(
+                    width: 317, // Adjust this width to match the width of your blue background rectangle
+                    child: Text(
+                      recordedAudioString, 
+                      style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
+                      textAlign: TextAlign.center, // Center the text within the container
+                    ),
+                  ),
+                SizedBox(height: 275),
                 // Assistant icon
                 Align(
                   alignment: Alignment.bottomLeft,
@@ -217,13 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
-
+}
 class EmptyCircle extends StatelessWidget {
   final Color color;
   EmptyCircle({Key? key, required this.color}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:speakwise/audioRecording/home_screen.dart';
+import 'package:speakwise/features/user_auth/presentation/pages/home_page.dart';
 import 'package:speakwise/features/user_auth/presentation/pages/login_page.dart';
 import 'package:speakwise/screens/InterviewAnalysisScreen.dart';
 import 'package:speakwise/screens/LoginPage.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SpeakWise',
-      home: StartUp(),
+      home: HomeScreen(),
       
     );
   }

@@ -1,15 +1,14 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:speakwise/constants/colors.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
-import 'package:speakwise/constants/colors.dart';
 import 'package:record/record.dart';
 import 'package:audioplayers/audioplayers.dart';
-
+import 'package:speakwise/Sentiment Analysis/sentimentAnalysis.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -21,15 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController userInputTextEditingController =
       TextEditingController();
   final SpeechToText speechToTextInstance = SpeechToText();
-  String recordedAudioString = "Today was a good day";
+  String recordedAudioString = "";
   bool isLoading = false;
   late Timer _timer;
   int _seconds = 300; // 5 minutes initially
   late Record audioRecord;
   late AudioPlayer audioPlayer;
   bool isRecording = false;
+  int _wordCount = 0;
+  int _fillerWordCount = 0; // Filler word count
   String audioPath = '';
-  late String _recorderTxt = '00:00:00';
 
   @override
   void initState() {
@@ -78,13 +78,12 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         isRecording = false;
         audioPath = path!;
-        print(path!);
+        _calculateWPM();
       });
     } catch (e) {
       print('Error Stopped Recording: $e');
     }
     _cancelTimer();
-    // Wait for 1 second to ensure recognition finishes processing
     await Future.delayed(Duration(seconds: 1));
     setState(() {
       // saveTextToFile(recordedAudioString); // Save the recorded text to file
@@ -95,6 +94,8 @@ class _HomeScreenState extends State<HomeScreen> {
     print("Speech Result: ${recognitionResult.recognizedWords}");
     setState(() {
       recordedAudioString = recognitionResult.recognizedWords;
+      _wordCount = recordedAudioString.split(' ').length;
+      _calculateFillerWordCount();
     });
   }
 
@@ -116,43 +117,36 @@ class _HomeScreenState extends State<HomeScreen> {
     _timer.cancel();
   }
 
+  void _calculateWPM() {
+    double durationInMinutes = (300 - _seconds) / 60;
+    double wordsPerMinute = _wordCount / durationInMinutes;
+    int roundedWPM = wordsPerMinute.round(); // Round to the nearest integer
+    print('Words per minute: $roundedWPM');
+  }
+
+  void _calculateFillerWordCount() {
+    List<String> fillerWords = ["umm", "like", "uhh"]; // List of filler words
+    int count = 0;
+    for (String word in fillerWords) {
+      count += RegExp(r'\b' + word + r'\b')
+          .allMatches(recordedAudioString)
+          .length;
+    }
+    setState(() {
+      _fillerWordCount = count;
+    });
+  }
+
   String _formatTime(int seconds) {
     int minutes = seconds ~/ 60;
     int remainingSeconds = seconds % 60;
     return '$minutes:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
-  // Future<void> startRecording() async {
-  //   try {
-  //     if (await audioRecord.hasPermission()) {
-  //       await audioRecord.start();
-  //       setState(() {
-  //         isRecording = true;
-  //       });
-  //     }
-  //   } catch (e) {
-  //     print("Error Start Recording: $e");
-  //   }
-  // }
-
-  // Future<void> stopRecording() async {
-  //   try {
-  //     String? path = await audioRecord.stop();
-  //     setState(() {
-  //       isRecording = false;
-  //       audioPath = path!;
-  //       print(path!);
-  //     });
-  //   } catch (e) {
-  //     print('Error Stopped Recording: $e');
-  //   }
-  // }
-
   Future<void> playRecording() async {
     try {
       if (audioPath.isNotEmpty) {
         await audioPlayer.play(UrlSource(audioPath));
-        print(audioPath!);
       } else {
         print('Error: No audio file recorded.');
       }
@@ -196,38 +190,39 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Center(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(height: 40),
-                  Text(
-                    '  SpeakWise.  ',
-                    style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2.0,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 40),
+                Text(
+                  '  SpeakWise.  ',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
+                    color: TextColor,
+                  ),
+                ),
+                SizedBox(height: 10),
+                SizedBox(
+                  height: 50,
+                  width: 100,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
                       color: TextColor,
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  SizedBox(
-                    height: 50,
-                    width: 100,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: TextColor,
-                      ),
-                      child: Center(
-                        child: Text(
-                          _formatTime(_seconds),
-                          style: TextStyle(fontSize: 20, color: BgShadedBlue),
-                        ),
+                    child: Center(
+                      child: Text(
+                        _formatTime(_seconds),
+                        style: TextStyle(fontSize: 20, color: BgShadedBlue),
                       ),
                     ),
                   ),
-                  SizedBox(height: 60),
-                  RoundedRectangle(width: 317, height: 510),
-                ]),
+                ),
+                SizedBox(height: 60),
+                RoundedRectangle(width: 317, height: 510),
+              ],
+            ),
           ),
           SingleChildScrollView(
             child: Padding(
@@ -247,7 +242,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                  SizedBox(height: 275),
                   // Assistant icon
                   Align(
                     alignment: Alignment.bottomLeft,
@@ -262,11 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               alignment: Alignment.bottomLeft,
                               child: LoadingAnimationWidget.beat(
                                 size: 150,
-                                color: speechToTextInstance.isListening
-                                    ? Colors.deepPurple
-                                    : isLoading
-                                        ? Colors.deepPurple[75]!
-                                        : Colors.deepPurple[37]!,
+                                color: Colors.deepPurple,
                               ),
                             )
                           : Image.asset(
@@ -289,8 +279,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: playRecording,
                         child: Text('Play Recording'),
                       ),
+                      ElevatedButton(
+                        onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SentimentAnalysisPage(recordedAudioString: recordedAudioString),),);
+                        },
+                      child: Text('Analyze Sentiment'),
+                      ),
                     ],
                   ),
+                  SizedBox(height: 20),
+                  Text('Words per minute: ${(_wordCount / ((300 - _seconds) / 60)).toStringAsFixed(0)}'),
+                  SizedBox(height: 10),
+                  Text('Filler word count: $_fillerWordCount'), // Display filler word count
                 ],
               ),
             ),
@@ -349,4 +349,10 @@ class RoundedRectangle extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: HomeScreen(),
+  ));
 }

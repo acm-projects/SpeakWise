@@ -7,6 +7,8 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speakwise/constants/colors.dart';
+import 'package:record/record.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -19,10 +21,31 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController userInputTextEditingController =
       TextEditingController();
   final SpeechToText speechToTextInstance = SpeechToText();
-  String recordedAudioString = "";
+  String recordedAudioString = "Today was a good day";
   bool isLoading = false;
   late Timer _timer;
   int _seconds = 300; // 5 minutes initially
+  late Record audioRecord;
+  late AudioPlayer audioPlayer;
+  bool isRecording = false;
+  String audioPath = '';
+  late String _recorderTxt = '00:00:00';
+
+  @override
+  void initState() {
+    super.initState();
+    initializeSpeechToText();
+    audioPlayer = AudioPlayer();
+    audioRecord = Record();
+  }
+
+  @override
+  void dispose() {
+    _cancelTimer();
+    audioRecord.dispose();
+    audioPlayer.dispose();
+    super.dispose();
+  }
 
   void initializeSpeechToText() async {
     print("Initialize speech to text");
@@ -34,19 +57,39 @@ class _HomeScreenState extends State<HomeScreen> {
   void startListeningNow() async {
     FocusScope.of(context).unfocus();
     await speechToTextInstance.listen(onResult: onSpeechToTextResult);
+    try {
+      if (await audioRecord.hasPermission()) {
+        await audioRecord.start();
+        setState(() {
+          isRecording = true;
+        });
+      }
+    } catch (e) {
+      print("Error Start Recording: $e");
+    }
     _startTimer();
     setState(() {});
   }
 
   void stopListeningNow() async {
-  await speechToTextInstance.stop();
-  _cancelTimer();
-  // Wait for 1 second to ensure recognition finishes processing
-  await Future.delayed(Duration(seconds: 1));
-  setState(() {
-    saveTextToFile(recordedAudioString); // Save the recorded text to file
-  });
-}
+    await speechToTextInstance.stop();
+    try {
+      String? path = await audioRecord.stop();
+      setState(() {
+        isRecording = false;
+        audioPath = path!;
+        print(path!);
+      });
+    } catch (e) {
+      print('Error Stopped Recording: $e');
+    }
+    _cancelTimer();
+    // Wait for 1 second to ensure recognition finishes processing
+    await Future.delayed(Duration(seconds: 1));
+    setState(() {
+      // saveTextToFile(recordedAudioString); // Save the recorded text to file
+    });
+  }
 
   void onSpeechToTextResult(SpeechRecognitionResult recognitionResult) {
     print("Speech Result: ${recognitionResult.recognizedWords}");
@@ -54,18 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
       recordedAudioString = recognitionResult.recognizedWords;
     });
   }
-Future<void> saveTextToFile(String text) async {
-  try {
-    final directory = await getApplicationSupportDirectory();
-    final directoryPath = '${directory.path}/audioTextFiles';
-    final file = File('$directoryPath/recorded_text.txt');
-    print('File path: ${file.path}'); // Print file path for debugging
-    await file.writeAsString(text);
-    print('Text saved successfully!');
-  } catch (e) {
-    print('Error saving text: $e');
-  }
-}
 
   void _startTimer() {
     const oneSecond = Duration(seconds: 1);
@@ -91,139 +122,185 @@ Future<void> saveTextToFile(String text) async {
     return '$minutes:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 
-  @override
-  void initState() {
-    super.initState();
-    initializeSpeechToText();
+  // Future<void> startRecording() async {
+  //   try {
+  //     if (await audioRecord.hasPermission()) {
+  //       await audioRecord.start();
+  //       setState(() {
+  //         isRecording = true;
+  //       });
+  //     }
+  //   } catch (e) {
+  //     print("Error Start Recording: $e");
+  //   }
+  // }
+
+  // Future<void> stopRecording() async {
+  //   try {
+  //     String? path = await audioRecord.stop();
+  //     setState(() {
+  //       isRecording = false;
+  //       audioPath = path!;
+  //       print(path!);
+  //     });
+  //   } catch (e) {
+  //     print('Error Stopped Recording: $e');
+  //   }
+  // }
+
+  Future<void> playRecording() async {
+    try {
+      if (audioPath.isNotEmpty) {
+        await audioPlayer.play(UrlSource(audioPath));
+        print(audioPath!);
+      } else {
+        print('Error: No audio file recorded.');
+      }
+    } catch (e) {
+      print('Error playing recording: $e');
+    }
   }
 
- @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    resizeToAvoidBottomInset: false,
-    backgroundColor: newBgColor,
-    body: Stack(
-      children: [
-        const Positioned( //the first circle on the top left
-          left: -60,
-          top: 150,
-          child: CircleAvatar(
-            backgroundColor: TSpurpleColor,
-            radius: 120,
-          ),
-        ),
-        Positioned(//open circle on left
-          left: -5,
-          top: 625,
-          child: EmptyCircle(color: TextColor),
-        ),
-        Positioned(//open circle on right
-          right: -100,
-          top: 300,
-          child: EmptyCircle(color: TextColor),
-        ),
-        const Positioned( //circle on right below
-          right: -20,
-          bottom: -50,
-          child: CircleAvatar(
-            backgroundColor: TSpurpleColor,
-            radius: 100,
-          ),
-        ),
-        Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              //top speakwise
-              SizedBox(height: 40), //where to place the speakwise logo
-              Text(
-                '  SpeakWise.  ',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
-                  color: TextColor,
-                ),
-              ),
-              SizedBox(height: 10), // Adjust this height as needed
-              SizedBox(
-                height: 50,
-                width: 100,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: TextColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      _formatTime(_seconds),
-                      style: TextStyle(fontSize: 20, color: BgShadedBlue),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 60),
-              RoundedRectangle(
-                width: 317,
-                height: 510
-              ),
-            ]
-          ),
-        ),
-        SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                SizedBox(height: 300),
-                // Display recorded text
-                if (recordedAudioString.isNotEmpty)
-                  Container(
-                    width: 317, // Adjust this width to match the width of your blue background rectangle
-                    child: Text(
-                      recordedAudioString, 
-                      style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
-                      textAlign: TextAlign.center, // Center the text within the container
-                    ),
-                  ),
-                SizedBox(height: 275),
-                // Assistant icon
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: InkWell(
-                    onTap: () {
-                      speechToTextInstance.isListening
-                          ? stopListeningNow()
-                          : startListeningNow();
-                    },
-                    child: speechToTextInstance.isListening
-                        ? Align(
-                            alignment: Alignment.bottomLeft,
-                            child: LoadingAnimationWidget.beat(
-                              size: 150,
-                              color: speechToTextInstance.isListening
-                                  ? Colors.deepPurple
-                                  : isLoading
-                                      ? Colors.deepPurple[75]!
-                                      : Colors.deepPurple[37]!,
-                            ),
-                          )
-                        : Image.asset(
-                            "images/assistant_icon.png",
-                            height: 150,
-                            width: 150,
-                          ),
-                  ),
-                ),
-              ],
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: newBgColor,
+      body: Stack(
+        children: [
+          const Positioned(
+            left: -60,
+            top: 150,
+            child: CircleAvatar(
+              backgroundColor: TSpurpleColor,
+              radius: 120,
             ),
           ),
-        ),
-      ],
-    ),
-  );
+          Positioned(
+            left: -5,
+            top: 625,
+            child: EmptyCircle(color: TextColor),
+          ),
+          Positioned(
+            right: -100,
+            top: 300,
+            child: EmptyCircle(color: TextColor),
+          ),
+          const Positioned(
+            right: -20,
+            bottom: -50,
+            child: CircleAvatar(
+              backgroundColor: TSpurpleColor,
+              radius: 100,
+            ),
+          ),
+          Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 40),
+                  Text(
+                    '  SpeakWise.  ',
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.0,
+                      color: TextColor,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 50,
+                    width: 100,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: TextColor,
+                      ),
+                      child: Center(
+                        child: Text(
+                          _formatTime(_seconds),
+                          style: TextStyle(fontSize: 20, color: BgShadedBlue),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 60),
+                  RoundedRectangle(width: 317, height: 510),
+                ]),
+          ),
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  SizedBox(height: 300),
+                  // Display recorded text
+                  if (recordedAudioString.isNotEmpty)
+                    Container(
+                      width: 317,
+                      child: Text(
+                        recordedAudioString,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  SizedBox(height: 275),
+                  // Assistant icon
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: InkWell(
+                      onTap: () {
+                        speechToTextInstance.isListening
+                            ? stopListeningNow()
+                            : startListeningNow();
+                      },
+                      child: speechToTextInstance.isListening
+                          ? Align(
+                              alignment: Alignment.bottomLeft,
+                              child: LoadingAnimationWidget.beat(
+                                size: 150,
+                                color: speechToTextInstance.isListening
+                                    ? Colors.deepPurple
+                                    : isLoading
+                                        ? Colors.deepPurple[75]!
+                                        : Colors.deepPurple[37]!,
+                              ),
+                            )
+                          : Image.asset(
+                              "images/assistant_icon.png",
+                              height: 150,
+                              width: 150,
+                            ),
+                    ),
+                  ),
+                  SizedBox(height: 20), // Added space
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // ElevatedButton(
+                      //   onPressed: isRecording ? stopListeningNow : startListeningNow,
+                      //   child: Text(isRecording ? 'Stop Recording' : 'Start Recording'),
+                      // ),
+                      SizedBox(width: 20), // Added space
+                      ElevatedButton(
+                        onPressed: playRecording,
+                        child: Text('Play Recording'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
-}
+
 class EmptyCircle extends StatelessWidget {
   final Color color;
   EmptyCircle({Key? key, required this.color}) : super(key: key);
@@ -249,6 +326,7 @@ class EmptyCirclePainter extends CustomPainter {
     final middle = Offset(size.width / 9, size.height / 20);
     canvas.drawCircle(middle, 90, paint);
   }
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return false;

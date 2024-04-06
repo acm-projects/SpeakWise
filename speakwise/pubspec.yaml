@@ -53,6 +53,9 @@ dependencies:
   audio_session: ^0.1.6
   http: ^0.13.4
   audioplayers: ^6.0.0
+  logger: ^1.1.0
+  flutter_tts: ^4.0.2
+  record: ^4.1.0
 
 dev_dependencies:
   flutter_test:

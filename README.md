@@ -6,7 +6,7 @@
 
 <h1 align="center"> SpeakWise </h1>
 
-<div align="center"> Have you ever struggled with public speaking or been nervous about acing that upcoming interview? SpeakWise is your ultimate companion for mastering the art of speech and interview preparation! Record your speech effortlessly within the app and watch as SpeakWise analyzes your tone, pace, and counts your filler words. Additionally, experience mock interviews catered to your job description with personalized interview questions and response analysis. Join SpeakWise – where your speaking troubles end and communication begins! </div>
+<div align="center"> Struggling to coordinate group projects or social plans with busy friends/family, especially when exams and deadlines seem to always get in the way? Meet Harmoni, your ultimate scheduling companion designed just for college students. Harmoni takes the hassle out of planning by syncing all your group members’ calendars into one unified view. It smartly identifies free time slots that work for everyone, while carefully avoiding clashes with exams and critical deadlines on your academic calendar. The app then creates a poll with these optimal time slots. Once the group votes on the best time, Harmoni automatically confirms the meeting and adds it to everyone’s calendars, complete with a notification. With Harmoni, group scheduling becomes effortless and efficient. </div>
 
 
 ## MVP 🌟
